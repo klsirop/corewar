@@ -6,7 +6,7 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 15:49:37 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:19:12 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/08 19:51:39 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -510,7 +510,7 @@ int		ft_game(t_core *core, t_vm *vm)
 			if (core->game->status == 1)
 			{
 				schet++;
-				if (schet == 50)
+				if (schet == 300)
 				{
 					ft_change_comment(core);
 					schet = 0;

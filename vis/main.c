@@ -6,7 +6,7 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:06:23 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:25:43 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/08 19:45:01 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int			main(int ac, char **av)
 		error_exit(vm, "main - null ptr returned");
 	initialize_all(ac, av, vm);
 	introduce(vm->max_pl, vm);
-	// if (vm->flag && FLAG_GRAF)
+	if (vm->flag && FLAG_GRAF)
 		main_vis(vm);
-	// else
-	// 	corewar(vm);
+	else
+		corewar(vm);
 	free_exit(vm, NULL);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/13 12:16:02 by bsabre-c          #+#    #+#              #
-#    Updated: 2020/02/07 18:15:16 by volyvar-         ###   ########.fr        #
+#    Updated: 2020/02/08 19:36:18 by volyvar-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,8 @@ VIS			=	choose_players.c 				choose_theme.c				\
 				draw_letter.c					error.c						\
 				free.c							game.c						\
 				initial_core.c					main.c						\
-				move_car.c						see_stat.c					\
-				theme_text.c					lib/get_next_line.c ft_itoa_base.c pause.c draw_carriet.c end_game.c present_winner.c titres.c
+									see_stat.c					\
+				theme_text.c					lib/get_next_line.c  pause.c draw_carriet.c end_game.c present_winner.c titres.c
 
 OBJ			=	$(addprefix $(DIR_O)/,$(SRC:.c=.o))
 OBJ_V		=	$(addprefix $(DIR_V)/,$(VIS:.c=.o))
