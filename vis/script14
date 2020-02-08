@@ -1,0 +1,1 @@
+gcc ./libft/*.c ./libft/ft_printf/sources/*.c *.c -I/Users/volyvar-/.brew/Cellar/sdl2/2.0.10/include/SDL2 -L/Users/volyvar-/.brew/Cellar/sdl2/2.0.10/lib -lSDL2 -I/Users/volyvar-/.brew/Cellar/sdl2_ttf/2.0.15/include/SDL2/ -L/Users/volyvar-/.brew/Cellar/sdl2_ttf/2.0.15/lib -lSDL2_ttf
