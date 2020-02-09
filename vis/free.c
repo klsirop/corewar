@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:07:35 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:13:37 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 12:06:04 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 void	ft_delete_players(t_core *core)
 {

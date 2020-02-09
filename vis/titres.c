@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 18:14:37 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:12:21 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:52:30 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int		ft_timer(int y)
 {

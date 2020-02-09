@@ -6,28 +6,26 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:05:35 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 17:10:57 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 16:52:55 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
-void	ft_error()
+void	ft_error(void)
 {
-	fprint("Error: %s\n", SDL_Error);
+	fprint("Error: %s\n", SDL_GetError);
 	exit(EXIT_FAILURE);
 }
 
-void	ft_error_ttf()
+void	ft_error_ttf(void)
 {
 	fprint("Error: %s\n", TTF_GetError());
 	exit(EXIT_FAILURE);
 }
 
-// void	ft_success(t_core *core)
-// {
-// 	fprint("suc% %s\n", SDL_Error);
-// 	SDL_DestroyWindow(core->window);
-// 	SDL_Quit();
-// 	exit(EXIT_SUCCESS);
-// }
+void	ft_sim_error(void)
+{
+	fprint("Error\n");
+	exit(EXIT_FAILURE);
+}

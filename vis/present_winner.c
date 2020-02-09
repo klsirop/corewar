@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 14:57:05 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:11:42 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:53:36 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int		ft_find_winner_file(char **str, int theme, int pl)
 {
@@ -59,6 +59,7 @@ int		ft_present_winner(t_core *core, t_vm *vm)
 	// SDL_FillRect(core->screenSurface, &rect1, 0x000000);
 
 	ft_find_winner_file(&str, core->number_theme, ft_find_owner_col(core, vm->cw->last_alive + 1, vm->max_pl));
+	printf("str=%s\n", str);
 	core->winner = SDL_LoadBMP(str);
 	rect.x = 250;
 	rect.y = 250;

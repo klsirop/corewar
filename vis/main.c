@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:06:23 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:45:01 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 12:06:13 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int			main(int ac, char **av)
 {

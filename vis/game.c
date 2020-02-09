@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 15:49:37 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:51:39 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 15:54:59 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int		ft_draw_lines(t_core *core)
 {
@@ -166,10 +166,10 @@ int		ft_draw_word(t_core *core, char *str, SDL_Rect rect0)
 		ft_get_col(&core->text_color, 0x000000);
 	if (core->number_theme == 3)
 		ft_get_col(&core->text_color, 0x000000);
-	printf("str=%s\n", str);
+	// printf("str=%s\n", str);
 	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, (const char *)str, core->text_color)))
 		ft_error_ttf();
-	printf("Astr=%s\n", str);
+	// printf("Astr=%s\n", str);
 	SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &rect0);
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
@@ -510,7 +510,7 @@ int		ft_game(t_core *core, t_vm *vm)
 			if (core->game->status == 1)
 			{
 				schet++;
-				if (schet == 300)
+				if (schet == 50)
 				{
 					ft_change_comment(core);
 					schet = 0;

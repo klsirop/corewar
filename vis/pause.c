@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 17:53:30 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:11:37 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 12:06:17 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int		ft_draw_pause(t_core *core)
 {

@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 18:51:40 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:12:03 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 12:06:32 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int		ft_see_stat1(t_core *core, int x, int y, int num)
 {

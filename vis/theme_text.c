@@ -6,11 +6,11 @@
 /*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:20:31 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/08 19:12:18 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/09 12:06:35 by volyvar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sdl2.h"
+#include "vis.h"
 
 int		ft_text_theme(t_core *core, char *str)
 {
