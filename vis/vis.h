@@ -3,27 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   vis.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:06:39 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 17:30:25 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/11 19:12:02 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "lib/get_next_line.h"
-#include </Users/volyvar-/Library/SDL2/SDL.h>
-#include </Users/volyvar-/Library/SDL2/SDL_ttf.h>
-#include </Users/volyvar-/Library/SDL2/SDL_image.h>
-#include "../vm.h"
+#ifndef VIS_H
+# define VIS_H
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-
-// #define GAME_FON_COL 0x0b2852
-
-// # include "/Users/volyvar-/Library/SDL2/SDL_image.h"
+# include "../libft/libft.h"
+# include "lib/get_next_line.h"
+# include "/Users/jmaynard/Library/SDL2/SDL_ttf.h"
+# include "/Users/jmaynard/Library/SDL2/SDL.h"
+# include "../vm.h"
 
 typedef struct		s_theme
 {
@@ -480,3 +474,5 @@ int		ft_present_winner(t_core *core, t_vm *vm);
 
 int		ft_titres(t_core *core);
 int		ft_draw_titre(t_core *core, int y, char *aut);
+
+#endif
