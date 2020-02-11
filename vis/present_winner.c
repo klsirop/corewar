@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 14:57:05 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/11 20:51:58 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/11 21:13:36 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_print_winner(t_core *core, t_vm *vm)
 {
 	SDL_Rect	rect;
 	char		*str;
-
+;
 	ft_find_winner_file(&str, core->number_theme, \
 			ft_find_owner_col(core, vm->cw->last_alive + 1, vm->max_pl));
 	if (!(core->winner = SDL_LoadBMP(str)))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:18:03 by bsabre-c          #+#    #+#             */
-/*   Updated: 2020/02/07 12:46:24 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/11 21:09:14 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ void			operation_aff(t_car *carriage, t_vm *vm);
 
 
 
-
+int main_vis(t_vm *vm);
 
 void	introduce(short max_pl, t_vm *vm);
 void	print_usage(int ac);

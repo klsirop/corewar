@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:16:17 by bsabre-c          #+#    #+#             */
-/*   Updated: 2020/02/04 16:14:18 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/11 20:59:25 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,20 @@ void	introduce(short max_pl, t_vm *vm)
 	}
 }
 
+int			main(int ac, char **av)
+{
+	t_vm	*vm;
 
+	if (ac < 2 || ac > MAX_ARGS_NUMBER)
+		print_usage(ac);
+	if (!(vm = create_vm_struct(preliminary_parse_flags(ac, av))))
+		error_exit(vm, "main - null ptr returned");
+	initialize_all(ac, av, vm);
+	introduce(vm->max_pl, vm);
+	if (vm->flag && FLAG_GRAF)
+		main_vis(vm);
+	else
+		corewar(vm);
+	free_exit(vm, NULL);
+	return (0);
+}
