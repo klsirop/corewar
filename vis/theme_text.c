@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   theme_text.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:20:31 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 12:06:35 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/11 20:08:36 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ int		ft_text_theme(t_core *core, char *str)
 	core->text_color.r = 0xac;
 	core->text_color.g = 0x75;
 	core->text_color.b = 0x4c;
-	// if (SDL_FillRect(core->screenSurface, &(core->theme->rect0), 0x2f7190) < 0)
-	// 	ft_error();
-	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, (const char *)str, core->text_color)))
+	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, \
+			(const char *)str, core->text_color)))
 		ft_error_ttf();
-	SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &rect0);
+	if (SDL_BlitScaled(core->text_surface, \
+			NULL, core->screenSurface, &rect0) < 0)
+		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
 	return (0);
@@ -39,24 +40,20 @@ int		ft_text_fight(t_core *core, int fl)
 	core->text_color.a = 0x00;
 	if (fl == 0 || fl == 2)
 	{
-		core->text_color.r = 0xd7;
-		core->text_color.g = 0xb5;
-		core->text_color.b = 0xa1;
+		ft_get_col(&core->text_color, 0xd7b5a1);
 		if (fl == 2)
 			core->text_color.a = 0x50;
 	}
 	if (fl == 1)
-	{
-		core->text_color.r = 0x5f;
-		core->text_color.g = 0x01;
-		core->text_color.b = 0x0a;
-	}
-	// printf("fl=%d\n", fl);
+		ft_get_col(&core->text_color, 0x5f010a);
 	if (SDL_FillRect(core->screenSurface, &(core->theme->rect1), 0x2f7190) < 0)
 		ft_error();
-	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, ("Cavalier Fight"), core->text_color)))
+	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, \
+			("Cavalier Fight"), core->text_color)))
 		ft_error_ttf();
-	SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &(core->theme->rect1));
+	if (SDL_BlitScaled(core->text_surface, NULL,\
+			core->screenSurface, &(core->theme->rect1)) < 0)
+		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
 	return (0);
@@ -67,24 +64,20 @@ int		ft_text_inter(t_core *core, int fl)
 	core->text_color.a = 0x00;
 	if ((fl == 0) || (fl == 2))
 	{
-		core->text_color.r = 0xd7;
-		core->text_color.g = 0xb5;
-		core->text_color.b = 0xa1;
+		ft_get_col(&core->text_color, 0xd7b5a1);
 		if (fl == 2)
 			core->text_color.a = 0x50;
 	}
-	if (fl == 1) 
-	{
-		core->text_color.r = 0x5f;
-		core->text_color.g = 0x01;
-		core->text_color.b = 0x0a;
-	}
-	//printf("fl=%d\n", fl);
+	if (fl == 1)
+		ft_get_col(&core->text_color, 0x5f010a);
 	if (SDL_FillRect(core->screenSurface, &(core->theme->rect2), 0x2f7190) < 0)
 		ft_error();
-	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, ("International"), core->text_color)))
+	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, \
+			("International"), core->text_color)))
 		ft_error_ttf();
-	SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &(core->theme->rect2));
+	if (SDL_BlitScaled(core->text_surface, \
+			NULL, core->screenSurface, &(core->theme->rect2)) < 0)
+		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
 	return (0);
@@ -95,23 +88,20 @@ int		ft_text_disco(t_core *core, int fl)
 	core->text_color.a = 0x00;
 	if (fl == 0 || fl == 2)
 	{
-		core->text_color.r = 0xd7;
-		core->text_color.g = 0xb5;
-		core->text_color.b = 0xa1;
+		ft_get_col(&core->text_color, 0xd7b5a1);
 		if (fl == 2)
 			core->text_color.a = 0x50;
 	}
 	if (fl == 1)
-	{
-		core->text_color.r = 0x5f;
-		core->text_color.g = 0x01;
-		core->text_color.b = 0x0a;
-	}
+		ft_get_col(&core->text_color, 0x5f010a);
 	if (SDL_FillRect(core->screenSurface, &(core->theme->rect3), 0x2f7190) < 0)
 		ft_error();
-	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, ("Default"), core->text_color)))
+	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu, \
+			("Default"), core->text_color)))
 		ft_error_ttf();
-	SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &(core->theme->rect3));
+	if (SDL_BlitScaled(core->text_surface, \
+			NULL, core->screenSurface, &(core->theme->rect3)) < 0)
+		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
 	return (0);

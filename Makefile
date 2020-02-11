@@ -6,7 +6,7 @@
 #    By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/13 12:16:02 by bsabre-c          #+#    #+#              #
-#    Updated: 2020/02/11 19:28:27 by jmaynard         ###   ########.fr        #
+#    Updated: 2020/02/11 20:22:15 by jmaynard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,12 +60,10 @@ VIS			=	choose_players.c 				choose_theme.c				\
 				comments_help_hh.c				comments_help_hhh.c			\
 				ft_new_hope.c					ft_change_comment.c			\
 				comments_h.c					ft_find_owner_col.c			\
-				draw_field_help.c 
+				draw_field_help.c 				ft_find_winner_file.c
 
 OBJ			=	$(addprefix $(DIR_O)/,$(SRC:.c=.o))
 OBJ_V		=	$(addprefix $(DIR_V)/,$(VIS:.c=.o))
-
-#MLX			= 	-L./mlx -lmlx -framework OpenGL -framework AppKit
 
 TTF			=	-I./includes -L./sdl2library/ttf -lSDL2_ttf
 SDL			=	-I./includes -L./sdl2library/orig -lSDL2
