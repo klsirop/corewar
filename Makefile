@@ -6,7 +6,7 @@
 #    By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/13 12:16:02 by bsabre-c          #+#    #+#              #
-#    Updated: 2020/02/11 21:26:42 by jmaynard         ###   ########.fr        #
+#    Updated: 2020/02/12 12:34:37 by jmaynard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,11 @@ VIS			=	choose_players.c 				choose_theme.c				\
 				ft_new_hope.c					ft_change_comment.c			\
 				comments_h.c					ft_find_owner_col.c			\
 				draw_field_help.c 				ft_find_winner_file.c		\
-				ft_del.c						ft_free_player_info.c
+				ft_del.c						ft_free_player_info.c		\
+				present_status.c				status_change.c				\
+				players_game.c					put_field.c					\
+				defines.c						fon.c						\
+				game_event.c					game_func.c
 
 OBJ			=	$(addprefix $(DIR_O)/,$(SRC:.c=.o))
 OBJ_V		=	$(addprefix $(DIR_V)/,$(VIS:.c=.o))

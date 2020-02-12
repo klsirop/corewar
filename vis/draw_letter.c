@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_letter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 16:29:53 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 16:36:17 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:37 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_draw_letter_hh(t_core *core, int n, SDL_Rect rect)
 	if (!(core->text_surface = TTF_RenderText_Blended(core->font_field,
 		(const char *)str, core->text_color)))
 		ft_error_ttf();
-	if (SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &rect))
+	if (SDL_BlitScaled(core->text_surface, NULL, core->screen_surface, &rect))
 		ft_error(core);
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
@@ -71,7 +71,7 @@ int		ft_draw_letter(t_core *core, int n, t_vm *vm)
 	if (!(core->text_surface = TTF_RenderText_Blended(core->font_field,
 		(const char *)str, core->text_color)))
 		ft_error_ttf();
-	if (SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &rect))
+	if (SDL_BlitScaled(core->text_surface, NULL, core->screen_surface, &rect))
 		ft_error(core);
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
@@ -95,7 +95,7 @@ int		ft_draw_wall(t_core *core, int n)
 	rect.y = y;
 	rect.w = 14;
 	rect.h = 13;
-	if (SDL_FillRect(core->screenSurface, &(rect), core->col))
+	if (SDL_FillRect(core->screen_surface, &(rect), core->col))
 		ft_error();
 	return (0);
 }

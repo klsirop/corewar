@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_players.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 19:37:16 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 12:34:11 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:50:53 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ int		ft_create_theme_players(t_core *core)
 
 int		ft_clear_fon(t_core *core)
 {
-	if (SDL_FillRect(core->screenSurface, &(core->theme->rect0), 0x2f7190))
+	if (SDL_FillRect(core->screen_surface, &(core->theme->rect0), 0x2f7190))
 		ft_error(core);
-	if (SDL_FillRect(core->screenSurface, &(core->theme->rect1), 0x2f7190))
+	if (SDL_FillRect(core->screen_surface, &(core->theme->rect1), 0x2f7190))
 		ft_error(core);
-	if (SDL_FillRect(core->screenSurface, &(core->theme->rect2), 0x2f7190))
+	if (SDL_FillRect(core->screen_surface, &(core->theme->rect2), 0x2f7190))
 		ft_error(core);
-	if (SDL_FillRect(core->screenSurface, &(core->theme->rect3), 0x2f7190))
+	if (SDL_FillRect(core->screen_surface, &(core->theme->rect3), 0x2f7190))
 		ft_error(core);
 	return (0);
 }
@@ -67,25 +67,25 @@ int		ft_present_players_help(t_core *core)
 	if (core->players_status[2] == 0)
 	{
 		if (SDL_BlitSurface(core->players->pl3_sh, NULL,
-			core->screenSurface, &(core->theme->rect2)))
+			core->screen_surface, &(core->theme->rect2)))
 			ft_error(core);
 	}
 	else
 	{
 		if (SDL_BlitSurface(core->players->pl3, NULL,
-			core->screenSurface, &(core->theme->rect2)))
+			core->screen_surface, &(core->theme->rect2)))
 			ft_error(core);
 	}
 	if (core->players_status[3] == 0)
 	{
 		if (SDL_BlitSurface(core->players->pl4_sh, NULL,
-			core->screenSurface, &(core->theme->rect3)))
+			core->screen_surface, &(core->theme->rect3)))
 			ft_error(core);
 	}
 	else
 	{
 		if (SDL_BlitSurface(core->players->pl4, NULL,
-			core->screenSurface, &(core->theme->rect3)))
+			core->screen_surface, &(core->theme->rect3)))
 			ft_error(core);
 	}
 	return (0);
@@ -96,14 +96,14 @@ int		ft_present_players(t_core *core)
 	ft_clear_fon(core);
 	if (core->players_status[0] == 0)
 	{
-		if (SDL_BlitSurface(core->players->pl1_sh, NULL, core->screenSurface,
+		if (SDL_BlitSurface(core->players->pl1_sh, NULL, core->screen_surface,
 		&(core->theme->rect0)))
 			ft_error(core);
 	}
 	else
 	{
 		if (SDL_BlitSurface(core->players->pl1, NULL,
-			core->screenSurface, &(core->theme->rect0)))
+			core->screen_surface, &(core->theme->rect0)))
 			ft_error(core);
 	}
 	ft_present_players_help_h(core);

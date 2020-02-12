@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 14:57:05 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/11 21:13:36 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:57:51 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	ft_print_half(t_core *core)
 	rect.y = 0;
 	rect.w = 1000;
 	rect.h = 1000;
-	SDL_FillRect(core->screenSurface, &rect, 0x2f7190);
+	SDL_FillRect(core->screen_surface, &rect, 0x2f7190);
 }
 
 void	ft_print_winner(t_core *core, t_vm *vm)
 {
 	SDL_Rect	rect;
 	char		*str;
-;
+
 	ft_find_winner_file(&str, core->number_theme, \
 			ft_find_owner_col(core, vm->cw->last_alive + 1, vm->max_pl));
 	if (!(core->winner = SDL_LoadBMP(str)))
@@ -37,14 +37,14 @@ void	ft_print_winner(t_core *core, t_vm *vm)
 	rect.h = 500;
 	rect.w = 500;
 	if (SDL_BlitSurface(core->winner, \
-			NULL, core->screenSurface, &rect) < 0)
+			NULL, core->screen_surface, &rect) < 0)
 		ft_error();
 	rect.x = 100;
 	rect.y = 120;
 	rect.h = 800;
 	rect.w = 800;
 	if (SDL_BlitSurface(core->winner_frame, \
-			NULL, core->screenSurface, &rect) < 0)
+			NULL, core->screen_surface, &rect) < 0)
 		ft_error();
 	ft_strdel(&str);
 }
@@ -96,7 +96,7 @@ int		ft_present_winner(t_core *core, t_vm *vm)
 			(const char *)name, core->text_color)))
 		ft_error_ttf();
 	if (SDL_BlitScaled(core->text_surface, \
-			NULL, core->screenSurface, &rect) < 0)
+			NULL, core->screen_surface, &rect) < 0)
 		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;

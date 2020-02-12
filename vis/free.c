@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:07:35 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/11 21:23:56 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:47 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	ft_free_core(t_core *core)
 		return ;
 	if (core->text_surface)
 		SDL_FreeSurface(core->text_surface);
-	if (core->screenSurface)
-		SDL_FreeSurface(core->screenSurface);
+	if (core->screen_surface)
+		SDL_FreeSurface(core->screen_surface);
 	ft_free_images(core);
 	if (core->theme)
 	{

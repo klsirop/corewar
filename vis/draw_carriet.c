@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_carriet.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:01:32 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 16:26:13 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:26 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ void	ft_draw_field_h(t_core *core, t_vm *vm, int num, SDL_Rect *rect)
 	ft_get_symb(core, &str, 0);
 	if (vm->arena_owner[num / 2] == 0)
 		core->text_color.a = 60;
-	if (SDL_FillRect(core->screenSurface, rect, core->game_fon))
+	if (SDL_FillRect(core->screen_surface, rect, core->game_fon))
 		ft_error();
 	if (!(core->text_surface = TTF_RenderText_Blended(core->font_field,
 		(const char *)str, core->text_color)))
 		ft_error_ttf();
-	if (SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, rect))
+	if (SDL_BlitScaled(core->text_surface, NULL, core->screen_surface, rect))
 		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;

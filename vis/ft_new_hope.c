@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_new_hope.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 14:30:33 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 14:35:40 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:59:54 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_new_hope_h(SDL_Rect *r, SDL_Rect rect, int count)
 	(*r).h = (rect.h - 10) / count;
 }
 
-int		ft_new_hope(t_core *core, SDL_Rect rect, char *comment)
+void	ft_new_hope(t_core *core, SDL_Rect rect, char *comment)
 {
 	int			count;
 	int			i;
@@ -39,12 +39,12 @@ int		ft_new_hope(t_core *core, SDL_Rect rect, char *comment)
 		if (!(core->text_surface =
 			TTF_RenderText_Blended(core->font_name, tmp, core->text_color)))
 			ft_error_ttf();
-		if (SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &(r)))
+		if (SDL_BlitScaled(core->text_surface, \
+			NULL, core->screen_surface, &(r)))
 			ft_error(core);
 		SDL_FreeSurface(core->text_surface);
 		core->text_surface = NULL;
 		ft_strdel(&tmp);
 		i++;
 	}
-	return (0);
 }

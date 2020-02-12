@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 18:14:37 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/11 20:33:26 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:53:20 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_draw_titre(t_core *core, int y, char *aut)
 			(const char *)aut, core->text_color)))
 		ft_error_ttf();
 	if ((SDL_BlitScaled(core->text_surface, \
-			NULL, core->screenSurface, &rect)) < 0)
+			NULL, core->screen_surface, &rect)) < 0)
 		ft_error();
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
@@ -50,7 +50,7 @@ int		ft_black_titre(t_core *core, int *y)
 		rect.w = 400;
 		rect.h = 50;
 		if (y[i] <= 1000 - 50 - 15)
-			if (SDL_FillRect(core->screenSurface, &rect, 0x000000) < 0)
+			if (SDL_FillRect(core->screen_surface, &rect, 0x000000) < 0)
 				ft_error();
 		i++;
 	}

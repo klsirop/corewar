@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:03:32 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/11 20:14:15 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:51:58 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_init_players_info(t_core *core)
 
 void	ft_empty_core(t_core *core)
 {
-	core->screenSurface = NULL;
+	core->screen_surface = NULL;
 	core->winner = NULL;
 	core->winner_frame = NULL;
 	core->strelochka = NULL;
@@ -67,18 +67,18 @@ void	ft_empty_core(t_core *core)
 int		ft_init_core(t_core *core, t_vm *vm)
 {
 	core->window = NULL;
-	core->screenSurface = NULL;
-	core->SCREEN_WIDTH = 2000;
-	core->SCREEN_HEIGHT = 1000;
+	core->screen_surface = NULL;
+	core->screen_width = 2000;
+	core->screen_height = 1000;
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 		ft_error();
 	if (TTF_Init() == -1)
 		ft_error_ttf();
 	if (!(core->window = SDL_CreateWindow("COREWAR", SDL_WINDOWPOS_CENTERED, \
-			SDL_WINDOWPOS_CENTERED, core->SCREEN_WIDTH, \
-			core->SCREEN_HEIGHT, SDL_WINDOW_SHOWN)))
+			SDL_WINDOWPOS_CENTERED, core->screen_width, \
+			core->screen_height, SDL_WINDOW_SHOWN)))
 		ft_error();
-	core->screenSurface = SDL_GetWindowSurface(core->window);
+	core->screen_surface = SDL_GetWindowSurface(core->window);
 	core->status = 0;
 	core->number_players = vm->max_pl;
 	core->number_theme = 1;

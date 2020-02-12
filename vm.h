@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:18:03 by bsabre-c          #+#    #+#             */
-/*   Updated: 2020/02/11 21:09:14 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:55:33 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ typedef struct	s_corewar
 	size_t			cycle;
 	size_t			next_check;
 	short			lives_for_cycle;
-	short			last_alive;//
+	short			last_alive;
 }				t_corewar;
 
 typedef struct	s_vm
@@ -174,18 +174,14 @@ void			operation_lldi(t_car *carriage, t_vm *vm);
 void			operation_lfork(t_car *carriage, t_vm *vm);
 void			operation_aff(t_car *carriage, t_vm *vm);
 
+int				main_vis(t_vm *vm);
 
-
-
-int main_vis(t_vm *vm);
-
-void	introduce(short max_pl, t_vm *vm);
-void	print_usage(int ac);
-t_vm	*create_vm_struct(short *tab);
+void			introduce(short max_pl, t_vm *vm);
+void			print_usage(int ac);
+t_vm			*create_vm_struct(short *tab);
 
 void			exe_carriages(t_vm *vm);
-t_corewar	initialize_variables(t_vm *vm);
+t_corewar		initialize_variables(t_vm *vm);
 void			cycles_to_die_check(t_vm *vm);
-
 
 #endif

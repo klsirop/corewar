@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comments_help_hh.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 14:11:53 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 14:20:06 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:15 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	ft_delete_prev_comm_h(t_core *core, int j)
 	if (j / 10 == 3)
 	{
 		ft_find_rect_sq(core, &rect, 3);
-		if (SDL_FillRect(core->screenSurface, &rect, core->game_fon))
+		if (SDL_FillRect(core->screen_surface, &rect, core->game_fon))
 			ft_error(core);
 	}
 	if (j / 10 == 4)
 	{
 		ft_find_rect_sq(core, &rect, 4);
-		if (SDL_FillRect(core->screenSurface, &rect, core->game_fon))
+		if (SDL_FillRect(core->screen_surface, &rect, core->game_fon))
 			ft_error(core);
 	}
 }
@@ -37,13 +37,13 @@ int		ft_delete_prev_comm(t_core *core, int j)
 	if (j / 10 == 1)
 	{
 		ft_find_rect_sq(core, &rect, 1);
-		if (SDL_FillRect(core->screenSurface, &rect, core->game_fon))
+		if (SDL_FillRect(core->screen_surface, &rect, core->game_fon))
 			ft_error(core);
 	}
 	if (j / 10 == 2)
 	{
 		ft_find_rect_sq(core, &rect, 2);
-		if (SDL_FillRect(core->screenSurface, &rect, core->game_fon))
+		if (SDL_FillRect(core->screen_surface, &rect, core->game_fon))
 			ft_error(core);
 	}
 	ft_delete_prev_comm_h(core, j);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_players_h.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 12:08:41 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 13:09:29 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:51:55 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_players_fon(t_core *core)
 	core->players_status[1] = 0;
 	core->players_status[2] = 0;
 	core->players_status[3] = 0;
-	if (SDL_FillRect(core->screenSurface, &(core->theme->rect0), 0x2f7190))
+	if (SDL_FillRect(core->screen_surface, &(core->theme->rect0), 0x2f7190))
 		ft_error();
 	str = NULL;
 	ft_find_str_players(core, &str);

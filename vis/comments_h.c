@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comments_h.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 14:49:19 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 17:27:31 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:14 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ int		ft_other(t_core *core)
 	rect.y = 0;
 	rect.w = 2000;
 	rect.h = 1000;
-	if (SDL_FillRect(core->screenSurface, &rect, 0x000000))
+	if (SDL_FillRect(core->screen_surface, &rect, 0x000000))
 		ft_error(core);
 	rect1.x = 930;
 	rect1.y = 900;
 	rect1.w = 140;
 	rect1.h = 50;
-	if (SDL_BlitSurface(core->strelochka, NULL, core->screenSurface,
+	if (SDL_BlitSurface(core->strelochka, NULL, core->screen_surface,
 		&rect1))
 		ft_error(core);
 	return (0);

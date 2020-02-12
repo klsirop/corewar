@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_change_comment.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 14:36:55 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 14:41:36 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:54 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_change_comment_h(t_core *core, int i)
 		ft_find_rect_sq(core, &rect, 3);
 		ft_eql_col(&core->text_color, core->player_info->pl3_col);
 		if (SDL_BlitSurface(core->player_info->pic_com3,
-			NULL, core->screenSurface, &(rect)))
+			NULL, core->screen_surface, &(rect)))
 			ft_error(core);
 		ft_rect_for_text(&rect_text, rect, i / 10);
 		ft_new_hope(core, rect_text, core->player_info->pl3_comm[(i % 10) - 1]);
@@ -31,7 +31,7 @@ void	ft_change_comment_h(t_core *core, int i)
 	{
 		ft_find_rect_sq(core, &rect, 4);
 		if (SDL_BlitSurface(core->player_info->pic_com4,
-			NULL, core->screenSurface, &(rect)))
+			NULL, core->screen_surface, &(rect)))
 			ft_error(core);
 		ft_eql_col(&core->text_color, core->player_info->pl4_col);
 		ft_rect_for_text(&rect_text, rect, i / 10);
@@ -48,7 +48,7 @@ void	ft_change_comment_hh(t_core *core, int i)
 	{
 		ft_find_rect_sq(core, &rect, 1);
 		if (SDL_BlitSurface(core->player_info->pic_com1,
-			NULL, core->screenSurface, &(rect)))
+			NULL, core->screen_surface, &(rect)))
 			ft_error(core);
 		ft_eql_col(&core->text_color, core->player_info->pl1_col);
 		ft_rect_for_text(&rect_text, rect, i / 10);
@@ -58,7 +58,7 @@ void	ft_change_comment_hh(t_core *core, int i)
 	{
 		ft_find_rect_sq(core, &rect, 2);
 		if (SDL_BlitSurface(core->player_info->pic_com2,
-			NULL, core->screenSurface, &(rect)))
+			NULL, core->screen_surface, &(rect)))
 			ft_error(core);
 		ft_eql_col(&core->text_color, core->player_info->pl2_col);
 		ft_rect_for_text(&rect_text, rect, i / 10);

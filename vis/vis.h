@@ -6,7 +6,7 @@
 /*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:06:39 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/11 21:21:07 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:59:34 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct		s_player_info
 typedef struct		s_core
 {
 	SDL_Window		*window;
-	SDL_Surface		*screenSurface;
+	SDL_Surface		*screen_surface;
 	SDL_Surface		*winner;
 	SDL_Surface		*winner_frame;
 	SDL_Surface		*strelochka;
@@ -102,8 +102,8 @@ typedef struct		s_core
 	t_game			*game;
 	int				*players_status;
 	int				*status_status;
-	int				SCREEN_WIDTH;
-	int				SCREEN_HEIGHT;
+	int				screen_width;
+	int				screen_height;
 	int				status;
 	SDL_Event		event;
 	SDL_Color		text_color;
@@ -207,7 +207,8 @@ int					ft_find_rect_com(t_core *core, SDL_Rect *rect, int pl);
 
 int					ft_prev_comm(int i, t_core *core);
 int					ft_part_com(t_core *core, char **tmp, int i, char *comment);
-int					ft_create_file_name_theme(char **file, int theme, int pl, t_core *core);
+int					ft_create_file_name_theme(char **file, \
+						int theme, int pl, t_core *core);
 void				ft_init_arr(char **arr);
 int					ft_load_pic_com(t_core *core);
 
@@ -217,7 +218,8 @@ int					ft_load_pic_com(t_core *core);
 
 void				ft_delete_prev_comm_h(t_core *core, int j);
 int					ft_delete_prev_comm(t_core *core, int j);
-void				ft_cpy_comment_h(int *i, char **comment, int new_len, char **tmp);
+void				ft_cpy_comment_h(int *i, \
+						char **comment, int new_len, char **tmp);
 char				*ft_cpy_comment(char **comment, int i, t_core *core);
 int					ft_part_rect(SDL_Rect *r, SDL_Rect rect, int i, int count);
 
@@ -226,7 +228,8 @@ int					ft_part_rect(SDL_Rect *r, SDL_Rect rect, int i, int count);
 */
 
 int					ft_find_local_end(char **comment, t_core *core);
-void				ft_rect_for_text(SDL_Rect *rect_text, SDL_Rect rect, int num);
+void				ft_rect_for_text(SDL_Rect *rect_text, \
+						SDL_Rect rect, int num);
 void				ft_load_i_comment_h(t_core *core, int i, int pl, char *str);
 int					ft_load_i_comment(t_core *core, int theme, int pl);
 
@@ -235,7 +238,7 @@ int					ft_load_i_comment(t_core *core, int theme, int pl);
 */
 
 void				ft_new_hope_h(SDL_Rect *r, SDL_Rect rect, int count);
-int					ft_new_hope(t_core *core, SDL_Rect rect, char *comment);
+void				ft_new_hope(t_core *core, SDL_Rect rect, char *comment);
 
 /*
 ** ft_change_comment.c
@@ -271,7 +274,8 @@ void				ft_reget_col(SDL_Color col, int *mycol);
 int					ft_delete_list(t_lis *list, t_core *core, t_vm *vm);
 void				ft_draw_carriet_h(t_core *core);
 int					ft_draw_carriet(t_core *core, t_vm *vm);
-void				ft_draw_field_h(t_core *core, t_vm *vm, int num, SDL_Rect *rect);
+void				ft_draw_field_h(t_core *core, \
+						t_vm *vm, int num, SDL_Rect *rect);
 
 /*
 ** draw_field_help.c
@@ -281,7 +285,8 @@ int					ft_get_rect(SDL_Rect *rect, int flag);
 int					ft_get_symb(t_core *core, char **str, int flag);
 void				ft_eql_col(SDL_Color *col1, SDL_Color col2);
 void				ft_find_owner_col_h(t_core *core, short pl, int *a);
-void				ft_find_owner_col_hh(t_core *core, short pl, int *a, short max_pl);
+void				ft_find_owner_col_hh(t_core *core, \
+						short pl, int *a, short max_pl);
 
 /*
 ** ft_find_owner_col.c
@@ -297,10 +302,13 @@ int					ft_find_owner_col(t_core *core, short pl, short max_pl);
 ** draw_field.c
 */
 
-void				ft_draw_field_hh(t_core *core, t_vm *vm, int num, SDL_Rect *rect);
-void				ft_draw_field_init(char **str, SDL_Rect *rect, int *num, int *pr);
+void				ft_draw_field_hh(t_core *core, \
+						t_vm *vm, int num, SDL_Rect *rect);
+void				ft_draw_field_init(char **str, \
+						SDL_Rect *rect, int *num, int *pr);
 int					ft_draw_field_if(t_core *core, t_vm *vm, int num, int flag);
-int					ft_draw_field_if1(t_core *core, t_vm *vm, int num, int flag);
+int					ft_draw_field_if1(t_core *core, \
+						t_vm *vm, int num, int flag);
 int					ft_draw_field(t_core *core, t_vm *vm, int flag);
 
 /*
@@ -308,7 +316,8 @@ int					ft_draw_field(t_core *core, t_vm *vm, int flag);
 */
 
 int					ft_get_symb_n(t_core *core, char **str, int n);
-void				ft_draw_letter_h(SDL_Rect *rect, t_core *core, int n, t_vm *vm);
+void				ft_draw_letter_h(SDL_Rect *rect, \
+						t_core *core, int n, t_vm *vm);
 void				ft_draw_letter_hh(t_core *core, int n, SDL_Rect rect);
 int					ft_draw_letter(t_core *core, int n, t_vm *vm);
 int					ft_draw_wall(t_core *core, int n);
@@ -322,7 +331,6 @@ int					ft_funal_screen(t_core *core, t_vm *vm);
 int					ft_strelochka(t_core *core, SDL_Rect rect);
 int					ft_end_game_help(t_core *core, SDL_Rect rect);
 int					ft_end_game(t_core *core, t_vm *vm);
-
 
 /*
 ** error.c
@@ -342,86 +350,137 @@ int					ft_find_winner_file(char **str, int theme, int pl);
 /*
 ** free.c
 */
-void	ft_free_core(t_core *core);
+
+void				ft_free_core(t_core *core);
 
 /*
 ** ft_del.c
 */
 
-void	ft_delete_players(t_core *core);
-void	ft_free_arr(char **arr);
-void	ft_list_del(t_lis *list);
+void				ft_delete_players(t_core *core);
+void				ft_free_arr(char **arr);
+void				ft_list_del(t_lis *list);
 
 /*
 ** ft_free_player_info.c
 */
-void	ft_free_player_info(t_core *core);
+
+void				ft_free_player_info(t_core *core);
 
 /*
 ** initial_core.c
 */
-void	ft_empty_core(t_core *core);
-int		ft_init_core(t_core *core, t_vm *vm);
-void	ft_init_players(t_core *core);
-void	ft_init_players_info(t_core *core);
+
+void				ft_empty_core(t_core *core);
+int					ft_init_core(t_core *core, t_vm *vm);
+void				ft_init_players(t_core *core);
+void				ft_init_players_info(t_core *core);
 
 /*
 ** theme_text.c
 */
 
-int		ft_text_theme(t_core *core, char *str);
-int		ft_text_fight(t_core *core, int fl);
-int		ft_text_inter(t_core *core, int fl);
-int		ft_text_disco(t_core *core, int fl);
+int					ft_text_theme(t_core *core, char *str);
+int					ft_text_fight(t_core *core, int fl);
+int					ft_text_inter(t_core *core, int fl);
+int					ft_text_disco(t_core *core, int fl);
 
 /*
 ** game.c
 */
 
-int		ft_game(t_core *core, t_vm *vm);
+int					ft_game(t_core *core, t_vm *vm);
 
 /*
 ** see_stat.c
 */
 
-int		ft_see_stat1(t_core *core, int x, int y, int num);
-int		ft_present_status(t_core *core);
-int		ft_fill_status_array(t_core *core, int a, int b);
-
-
-/*
-** move_car.c
-*/
-
-int		ft_move_car(t_core *core);
+int					ft_see_stat(t_core *core, int x, int y, int num);
+int					ft_present_status(t_core *core);
+int					ft_fill_status_array(t_core *core, int a, int b);
 
 /*
 ** main.c
 */
 
-int main_vis(t_vm *vm);
-
-char			*ft_itoa_base(unsigned short value, int base);
+int					main_vis(t_vm *vm);
 
 /*
 ** pause.c
 */
 
-int		ft_draw_pause(t_core *core);
-int		ft_redraw_pause(t_core *core, t_vm *vm);
-
+int					ft_draw_pause(t_core *core);
+int					ft_redraw_pause(t_core *core, t_vm *vm);
 
 /*
 ** present_winner.c
 */
 
-int		ft_present_winner(t_core *core, t_vm *vm);
+int					ft_present_winner(t_core *core, t_vm *vm);
 
 /*
 ** titres.c
 */
 
-int		ft_titres(t_core *core);
-int		ft_draw_titre(t_core *core, int y, char *aut);
+int					ft_titres(t_core *core);
+int					ft_draw_titre(t_core *core, int y, char *aut);
+
+/*
+** status_change.c
+*/
+
+void				ft_render_text(t_core *core, \
+						const char *str, SDL_Rect *rect);
+void				ft_print_status_top(t_core *core, \
+						SDL_Rect *rect, SDL_Color col, char *s);
+void				ft_print_status_down(t_core *core, \
+						SDL_Rect *rect, SDL_Color col, char *s);
+void				ft_delete_status_top(t_core *core, \
+						SDL_Rect *rect, char *slogan, int status);
+void				ft_delete_status_down(t_core *core, \
+						SDL_Rect *rect, char *slogan, int status);
+
+/*
+** players_game.c
+*/
+
+int					ft_reload_players(t_core *core);
+int					ft_put_players(t_core *core);
+void				ft_put_players_name(t_core *core, \
+						SDL_Rect rect, int num, char *str);
+
+/*
+** put_field.c
+*/
+
+int					ft_put_field(t_core *core, t_vm *vm);
+
+/*
+** fon.c
+*/
+
+int					ft_game_fon(t_core *core, t_vm *vm);
+
+/*
+** defines.c
+*/
+
+int					ft_draw_defines(t_core *core);
+int					ft_put_defines(t_core *core, t_vm *vm);
+
+/*
+** game_func.c
+*/
+
+void				ft_game_cycle(t_core *core, t_vm *vm, t_corewar *cw);
+void				ft_see_defines(t_core *core, t_vm *vm);
+void				ft_see_field(t_core *core, t_vm *vm);
+void				ft_see_comment(t_core *core, int *schet);
+
+/*
+** game_event.c
+*/
+
+int					ft_game_event(t_core *core, t_vm *vm, int *a);
 
 #endif

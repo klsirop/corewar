@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_theme.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:10:20 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 13:41:36 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:51:57 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int		ft_create_theme_rect(t_core *core)
 {
 	core->theme->rect0.x = 0;
 	core->theme->rect0.y = 0;
-	core->theme->rect0.w = core->SCREEN_WIDTH;
-	core->theme->rect0.h = core->SCREEN_HEIGHT;
-	if (SDL_FillRect(core->screenSurface, &(core->theme->rect0), 0x2f7190) < 0)
+	core->theme->rect0.w = core->screen_width;
+	core->theme->rect0.h = core->screen_height;
+	if (SDL_FillRect(core->screen_surface, &(core->theme->rect0), 0x2f7190) < 0)
 		ft_error();
 	core->theme->rect1.x = 700;
 	core->theme->rect1.y = 300;

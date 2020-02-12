@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 16:23:19 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/09 16:52:21 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:52:42 by jmaynard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_game_over(t_core *core)
 	if (!(core->text_surface = TTF_RenderText_Blended(core->font_menu,
 		("game over"), col)))
 		ft_error_ttf();
-	if (SDL_BlitScaled(core->text_surface, NULL, core->screenSurface, &rect))
+	if (SDL_BlitScaled(core->text_surface, NULL, core->screen_surface, &rect))
 		ft_error(core);
 	SDL_FreeSurface(core->text_surface);
 	core->text_surface = NULL;
@@ -57,10 +57,10 @@ int		ft_strelochka(t_core *core, SDL_Rect rect)
 	((core->event.button.x >= 930 && core->event.button.x <= 1070) &&
 	(core->event.button.y >= 900 && core->event.button.y <= 950)))
 	{
-		if (SDL_FillRect(core->screenSurface, &rect, 0x2f7190))
+		if (SDL_FillRect(core->screen_surface, &rect, 0x2f7190))
 			ft_error(core);
 		rect.x = 1000;
-		if (SDL_FillRect(core->screenSurface, &rect, 0x000000))
+		if (SDL_FillRect(core->screen_surface, &rect, 0x000000))
 			ft_error(core);
 		if (SDL_UpdateWindowSurface(core->window))
 			ft_error(core);
