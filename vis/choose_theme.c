@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_theme.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsabre-c <bsabre-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 12:10:20 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/12 12:51:57 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/13 19:33:27 by bsabre-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int		ft_create_theme_rect(t_core *core)
 
 int		ft_create_theme_text(t_core *core)
 {
-	if (!(core->font_menu = TTF_OpenFont("./anu/anu.ttf", 288)))
+	if (!(core->font_menu = TTF_OpenFont("./game/fonts/anu.ttf", 288)))
 		ft_error_ttf();
-	if (!(core->font_field = TTF_OpenFont("18365.ttf", 288)))
+	if (!(core->font_field = TTF_OpenFont("./game/fonts/18365.ttf", 288)))
 		ft_error_ttf();
-	if (!(core->font_name = TTF_OpenFont("./amatic/Amatic-Bold.ttf", 288)))
+	if (!(core->font_name = TTF_OpenFont("./game/fonts/Amatic-Bold.ttf", 288)))
 		ft_error_ttf();
 	ft_text_theme(core, "Choose Theme:");
 	ft_text_fight(core, 0);

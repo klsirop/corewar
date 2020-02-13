@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vis.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsabre-c <bsabre-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:06:39 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/12 12:59:34 by jmaynard         ###   ########.fr       */
+/*   Updated: 2020/02/13 19:51:42 by bsabre-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "../libft/libft.h"
 # include "lib/get_next_line.h"
-# include "/Users/jmaynard/Library/SDL2/SDL_ttf.h"
-# include "/Users/jmaynard/Library/SDL2/SDL.h"
+# include "../includes/SDL_ttf.h"
+# include "../includes/SDL.h"
 # include "../vm.h"
 
 typedef struct		s_theme

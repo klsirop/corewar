@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmaynard <jmaynard@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsabre-c <bsabre-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/13 12:16:02 by bsabre-c          #+#    #+#              #
-#    Updated: 2020/02/12 12:34:37 by jmaynard         ###   ########.fr        #
+#    Updated: 2020/02/13 20:12:12 by bsabre-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ FLAGS		= -Wall -Wextra -Werror  -g
 # directories
 DIR_O		=	objects
 DIR_V		=	vis
+DIR_SRC		=	src
+DIR_INC		=	includes
 
 # files
 SRC			=	vm_main.c						vm_free_exit.c				\
@@ -67,8 +69,13 @@ VIS			=	choose_players.c 				choose_theme.c				\
 				defines.c						fon.c						\
 				game_event.c					game_func.c
 
-OBJ			=	$(addprefix $(DIR_O)/,$(SRC:.c=.o))
+INC			=	op.h vis.h vm.h
+D_INC		=	$(addprefix $(DIR_INC)/,$(INC))
+
+SRC_D		=	$(addprefix $(DIR_SRC)/,$(SRC))
+# OBJ			=	$(addprefix $(DIR_O)/,$(SRC_D:.c=.o))
 OBJ_V		=	$(addprefix $(DIR_V)/,$(VIS:.c=.o))
+OBJ			=	$(SRC_D:.c=.o)
 
 TTF			=	-I./includes -L./sdl2library/ttf -lSDL2_ttf
 SDL			=	-I./includes -L./sdl2library/orig -lSDL2
@@ -79,26 +86,29 @@ L_FT_L 		= 	$(L_FT_D)/libft.a
 
 .PHONY: all clean fclean re proj
 
-$(NAME) : $(OBJ) $(OBJ_V)
+$(NAME) : $(OBJ) $(OBJ_V) 
 			@make -sC $(L_FT_D)
 			@echo "Compiling corewar"
 			@gcc $(FLAGS) $(OBJ) $(OBJ_V) $(L_FT_L) $(TTF) $(SDL) -o $(NAME)
 			@echo "File $(NAME) was created succesfully"
 
-$(DIR_O)/%.o: %.c vm.h op.h
-			@mkdir -p $(DIR_O)
-			@mkdir -p $(DIR_O)/vm_operation
-			@gcc $(FLAGS) -o $@ -c $<
+%.o: %.c
+	gcc $(CFLAGS) -I$(DIR_INC) -I$(L_FT_D) -c $< -o $@ 
 
-$(DIR_V)/%.o: %.c vis/sdl2.h
-			@gcc $(FLAGS) -o $@ -c $<
+# $(DIR_O)/%.o: %.c vm.h op.h
+# 			@mkdir -p $(DIR_O)
+# 			@mkdir -p $(DIR_O)/vm_operation
+# 			@gcc $(FLAGS) -o $@ -c $<
+
+# $(DIR_V)/%.o: %.c vis.h
+# 			@gcc $(FLAGS) -o $@ -c $<
 
 clean :
 			@echo "Start cleaning"
 			@make clean -sC $(L_FT_D)
 			@rm -rf .DS_Store
 			@rm -rf $(L_FT_D)/.DS_Store
-			@rm -rf $(DIR_O)
+			@rm -rf $(OBJ)
 			@rm -rf $(OBJ_V)
 			@echo "Cleaning finished"
 
