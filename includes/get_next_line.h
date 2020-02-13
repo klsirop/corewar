@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: volyvar- <volyvar-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsabre-c <bsabre-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 19:22:42 by volyvar-          #+#    #+#             */
-/*   Updated: 2020/02/03 16:54:05 by volyvar-         ###   ########.fr       */
+/*   Updated: 2020/02/13 20:41:13 by bsabre-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 # define BUFF_SIZE 1
 # define MAT_SIZE 3000
-# include "../../libft/libft.h"
+# include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 

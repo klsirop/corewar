@@ -6,7 +6,7 @@
 #    By: bsabre-c <bsabre-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/13 12:16:02 by bsabre-c          #+#    #+#              #
-#    Updated: 2020/02/13 20:12:12 by bsabre-c         ###   ########.fr        #
+#    Updated: 2020/02/13 21:05:53 by bsabre-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,25 +83,26 @@ SDL			=	-I./includes -L./sdl2library/orig -lSDL2
 # libraries
 L_FT_D 		= 	./libft
 L_FT_L 		= 	$(L_FT_D)/libft.a
+ 
+AAAA 		= 		-I./frameworks/SDL2.framework/Versions/A/Headers \
+					-I./frameworks/SDL2_image.framework/Versions/A/Headers \
+					-I./frameworks/SDL2_ttf.framework/Versions/A/Headers \
+					-I./frameworks/SDL2_mixer.framework/Versions/A/Headers \
+
+FRAMEWORKS	=		-F./frameworks \
+					-rpath ./frameworks \
+					-framework SDL2 -framework SDL2_ttf -framework SDL2_image -framework SDL2_mixer
 
 .PHONY: all clean fclean re proj
 
 $(NAME) : $(OBJ) $(OBJ_V) 
 			@make -sC $(L_FT_D)
 			@echo "Compiling corewar"
-			@gcc $(FLAGS) $(OBJ) $(OBJ_V) $(L_FT_L) $(TTF) $(SDL) -o $(NAME)
+			@gcc $(FLAGS) $(OBJ) $(OBJ_V) $(INCS) $(L_FT_L) $(FRAMEWORKS) -o $(NAME)
 			@echo "File $(NAME) was created succesfully"
 
 %.o: %.c
-	gcc $(CFLAGS) -I$(DIR_INC) -I$(L_FT_D) -c $< -o $@ 
-
-# $(DIR_O)/%.o: %.c vm.h op.h
-# 			@mkdir -p $(DIR_O)
-# 			@mkdir -p $(DIR_O)/vm_operation
-# 			@gcc $(FLAGS) -o $@ -c $<
-
-# $(DIR_V)/%.o: %.c vis.h
-# 			@gcc $(FLAGS) -o $@ -c $<
+			gcc $(CFLAGS) $(INCS) -I$(DIR_INC) -I$(L_FT_D) -c $< -o $@ 
 
 clean :
 			@echo "Start cleaning"
